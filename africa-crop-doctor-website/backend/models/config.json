@@ -1,0 +1,25 @@
+{
+  "model_name": "Africa Crop Doctor AI",
+  "model_version": "1.0",
+  "model_type": "enhanced_crop_disease_classifier",
+  "architecture": {
+    "backbone": "efficientnet_b0",
+    "enhancement": "attention_mechanism",
+    "heads": "multi_task"
+  },
+  "num_diseases": 35,
+  "num_crops": 13,
+  "num_severity_levels": 4,
+  "image_size": 224,
+  "input_channels": 3,
+  "task": "multi_task_classification",
+  "framework": "pytorch",
+  "created_date": "2025-10-01 16:51:27",
+  "total_parameters": 5297968,
+  "model_size_mb": 20.21,
+  "target_regions": [
+    "Africa",
+    "Global"
+  ],
+  "deployment_target": "mobile"
+}

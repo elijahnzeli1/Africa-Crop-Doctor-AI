@@ -1,0 +1,36 @@
+{
+  "model_name": "Africa Crop Doctor AI",
+  "version": "1.0",
+  "description": "Enhanced multi-task crop disease classification system for African agriculture",
+  "architecture": {
+    "backbone": "EfficientNet-B0",
+    "feature_enhancer": "512 units with BatchNorm and Dropout",
+    "attention": "Sigmoid-based attention mechanism",
+    "disease_head": "Multi-layer classifier \u2192 35 classes",
+    "crop_head": "Multi-layer classifier \u2192 13 classes",
+    "severity_head": "Multi-layer classifier \u2192 4 levels"
+  },
+  "training_info": {
+    "datasets": [
+      "PlantDoc",
+      "20K Multi-class",
+      "PlantDisease"
+    ],
+    "augmentations": "African farm conditions (lighting, rotation, blur)",
+    "curriculum_learning": "Progressive task weighting",
+    "scheduler": "OneCycleLR with warmup"
+  },
+  "performance_targets": {
+    "disease_accuracy": "60-80%",
+    "inference_time": "<300ms mobile CPU",
+    "memory_usage": "~40.4MB runtime"
+  },
+  "deployment": {
+    "format": "PyTorch/TorchScript/ONNX",
+    "target": "Mobile/Edge devices",
+    "regions": "Africa-focused, globally applicable"
+  },
+  "created": "2025-10-01 16:51:27",
+  "parameters": 5297968,
+  "size_mb": 20.21
+}

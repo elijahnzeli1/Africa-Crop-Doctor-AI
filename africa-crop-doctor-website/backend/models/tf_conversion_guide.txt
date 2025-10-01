@@ -1,0 +1,33 @@
+# TensorFlow Conversion Guide for Africa Crop Doctor AI
+
+## Model Information
+- Name: Africa Crop Doctor AI v1.0  
+- Architecture: EfficientNet-B0 + Multi-task heads
+- Parameters: 5,297,968 (20.2MB)
+- Created: 2025-10-01 16:51:27
+
+## Conversion Steps:
+1. Convert PyTorch → ONNX (done: model_onnx.onnx)
+2. Convert ONNX → TensorFlow:
+   ```bash
+   pip install onnx-tf
+   onnx-tf convert -i model_onnx.onnx -o africa_crop_doctor.pb
+   ```
+3. Convert to TensorFlow Lite:
+   ```python
+   import tensorflow as tf
+   converter = tf.lite.TFLiteConverter.from_saved_model('africa_crop_doctor')
+   tflite_model = converter.convert()
+   ```
+
+## Alternative: Use pytorch_model.bin with TorchMobile
+- Recommended for mobile deployment
+- Better performance than TF conversion
+- Preserves all model features
+
+## Model Signature:
+- Input: [1, 3, 224, 224] float32
+- Outputs: 
+  - disease: [1, 35] float32
+  - crop: [1, 13] float32  
+  - severity: [1, 4] float32

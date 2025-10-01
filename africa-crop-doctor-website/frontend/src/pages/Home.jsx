@@ -116,7 +116,7 @@ const Home = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {features.map((feature, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-green-600 mb-4">
@@ -126,6 +126,28 @@ const Home = () => {
                 <p className="text-gray-600">{feature.description}</p>
               </div>
             ))}
+          </div>
+
+          {/* African Focus Section */}
+          <div className="bg-white rounded-xl shadow-lg p-8">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">Designed for African Agriculture</h3>
+              <p className="text-lg text-gray-600">
+                Our AI model is specifically trained and optimized for African crop varieties and agricultural conditions
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <img 
+                src="/images/map.jpeg" 
+                alt="Africa Map - Geographic Coverage of Africa Crop Doctor AI"
+                className="max-w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
+            <div className="mt-6 text-center">
+              <p className="text-gray-600">
+                Supporting farmers across Africa with localized crop disease detection and treatment recommendations
+              </p>
+            </div>
           </div>
         </div>
       </section>

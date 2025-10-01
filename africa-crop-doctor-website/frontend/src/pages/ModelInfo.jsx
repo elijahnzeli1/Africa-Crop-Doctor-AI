@@ -102,7 +102,7 @@ const ModelInfo = () => {
             <Target className="w-6 h-6 mr-3 text-green-600" />
             Performance Metrics
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {performanceMetrics.map((metric, index) => (
               <div key={index} className="text-center p-4 bg-gray-50 rounded-lg">
                 <div className="text-3xl font-bold text-green-600 mb-2">{metric.value}</div>
@@ -110,6 +110,19 @@ const ModelInfo = () => {
                 <div className="text-sm text-gray-600">{metric.description}</div>
               </div>
             ))}
+          </div>
+          
+          {/* Model Evaluation Results Chart */}
+          <div className="bg-gray-50 rounded-lg p-6">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4 text-center">Detailed Evaluation Results</h3>
+            <img 
+              src="/images/model_evaluation_results.png" 
+              alt="Model Evaluation Results - Confusion Matrix and Performance Metrics"
+              className="w-full h-auto rounded-lg shadow-sm"
+            />
+            <p className="text-sm text-gray-600 mt-4 text-center">
+              Comprehensive evaluation showing confusion matrix, precision, recall, and F1-scores across all 35 disease classes
+            </p>
           </div>
         </div>
 

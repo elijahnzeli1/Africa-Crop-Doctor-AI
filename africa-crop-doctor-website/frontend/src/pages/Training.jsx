@@ -133,48 +133,109 @@ const Training = () => {
           </div>
         </div>
 
-        {/* Training Progress */}
+        {/* Training Visualizations */}
         <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
             <BarChart3 className="w-6 h-6 mr-3 text-green-600" />
-            Training Progress
+            Training Visualizations
           </h2>
           
-          {/* Progress Chart Placeholder */}
-          <div className="mb-6">
-            <div className="bg-gray-100 rounded-lg p-6 text-center">
-              <TrendingUp className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-              <p className="text-gray-600">Training Loss & Accuracy Curves</p>
-              <p className="text-sm text-gray-500 mt-2">
-                Loss decreased from 1.25 to 0.38 | Accuracy improved from 45% to 85.6%
+          {/* Training Progress Chart */}
+          <div className="mb-8">
+            <div className="bg-white rounded-lg p-6 border border-gray-200">
+              <img 
+                src="/images/enhanced_training_progress.png" 
+                alt="Training Progress - Loss and Accuracy Curves"
+                className="w-full h-auto rounded-lg shadow-sm"
+              />
+              <p className="text-sm text-gray-600 mt-4 text-center">
+                Training loss decreased from 1.25 to 0.38 | Disease accuracy improved from 45% to 85.6% | Crop accuracy improved from 72% to 92.3%
               </p>
             </div>
           </div>
 
-          {/* Epoch Milestones */}
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="text-left py-3 px-4 font-semibold text-gray-900">Epoch</th>
-                  <th className="text-left py-3 px-4 font-semibold text-gray-900">Train Loss</th>
-                  <th className="text-left py-3 px-4 font-semibold text-gray-900">Val Loss</th>
-                  <th className="text-left py-3 px-4 font-semibold text-gray-900">Disease Acc</th>
-                  <th className="text-left py-3 px-4 font-semibold text-gray-900">Crop Acc</th>
-                </tr>
-              </thead>
-              <tbody>
-                {epochData.map((data, index) => (
-                  <tr key={index} className="border-b border-gray-100 hover:bg-gray-50">
-                    <td className="py-3 px-4 font-medium">{data.epoch}</td>
-                    <td className="py-3 px-4">{data.trainLoss}</td>
-                    <td className="py-3 px-4">{data.valLoss}</td>
-                    <td className="py-3 px-4 text-green-600 font-medium">{data.diseaseAcc}%</td>
-                    <td className="py-3 px-4 text-blue-600 font-medium">{data.cropAcc}%</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          {/* Additional Training Charts */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-gray-50 rounded-lg p-4">
+              <img 
+                src="/images/download (13).png" 
+                alt="Training Metric 1"
+                className="w-full h-auto rounded-lg shadow-sm mb-3"
+              />
+              <p className="text-sm text-gray-600 text-center">Training Performance Analysis</p>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-4">
+              <img 
+                src="/images/download (14).png" 
+                alt="Training Metric 2"
+                className="w-full h-auto rounded-lg shadow-sm mb-3"
+              />
+              <p className="text-sm text-gray-600 text-center">Model Convergence Metrics</p>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-4">
+              <img 
+                src="/images/download (15).png" 
+                alt="Training Metric 3"
+                className="w-full h-auto rounded-lg shadow-sm mb-3"
+              />
+              <p className="text-sm text-gray-600 text-center">Validation Performance</p>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-4">
+              <img 
+                src="/images/download (16).png" 
+                alt="Training Metric 4"
+                className="w-full h-auto rounded-lg shadow-sm mb-3"
+              />
+              <p className="text-sm text-gray-600 text-center">Loss Function Analysis</p>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-4">
+              <img 
+                src="/images/download (17).png" 
+                alt="Training Metric 5"
+                className="w-full h-auto rounded-lg shadow-sm mb-3"
+              />
+              <p className="text-sm text-gray-600 text-center">Gradient Flow Visualization</p>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-4">
+              <img 
+                src="/images/download (18).png" 
+                alt="Training Metric 6"
+                className="w-full h-auto rounded-lg shadow-sm mb-3"
+              />
+              <p className="text-sm text-gray-600 text-center">Feature Activation Maps</p>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-4">
+              <img 
+                src="/images/download (19).png" 
+                alt="Training Metric 7"
+                className="w-full h-auto rounded-lg shadow-sm mb-3"
+              />
+              <p className="text-sm text-gray-600 text-center">Attention Weight Distribution</p>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-4">
+              <img 
+                src="/images/download (20).png" 
+                alt="Training Metric 8"
+                className="w-full h-auto rounded-lg shadow-sm mb-3"
+              />
+              <p className="text-sm text-gray-600 text-center">Batch Processing Statistics</p>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-4">
+              <img 
+                src="/images/download (21).png" 
+                alt="Training Metric 9"
+                className="w-full h-auto rounded-lg shadow-sm mb-3"
+              />
+              <p className="text-sm text-gray-600 text-center">Memory Usage Tracking</p>
+            </div>
+            <div className="bg-gray-50 rounded-lg p-4">
+              <img 
+                src="/images/download (22).png" 
+                alt="Training Metric 10"
+                className="w-full h-auto rounded-lg shadow-sm mb-3"
+              />
+              <p className="text-sm text-gray-600 text-center">Final Model Diagnostics</p>
+            </div>
           </div>
         </div>
 
